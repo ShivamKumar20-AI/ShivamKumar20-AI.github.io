@@ -1,0 +1,313 @@
+
+/*--------------------------------------------------------------
+# Custom additions — Shivam Kumar portfolio
+--------------------------------------------------------------*/
+
+/* Curriculum Vitae section (replaces the template's Resume block) */
+.cv .cv-title {
+  color: var(--heading-color);
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cv .cv-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid var(--accent-color);
+  position: relative;
+}
+
+.cv .cv-item h4 {
+  line-height: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin-bottom: 10px;
+}
+
+.cv .cv-item h5 {
+  font-size: 15px;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  border-radius: 4px;
+}
+
+.cv .cv-item ul { padding-left: 20px; }
+.cv .cv-item ul li { padding-bottom: 10px; }
+.cv .cv-item:last-child { padding-bottom: 0; }
+
+.cv .cv-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: var(--background-color);
+  border: 2px solid var(--accent-color);
+}
+
+/* Certification list */
+.cv .cert-list { list-style: none; padding: 0; margin: 0; }
+
+.cv .cert-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.cv .cert-list li:last-child { border-bottom: 0; }
+
+.cv .cert-status {
+  flex: 0 0 auto;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  padding: 4px 12px;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+.cv .cert-status.ok   { color: #0f7b3f; background: rgba(25, 160, 90, .12); }
+.cv .cert-status.wip  { color: #9a6100; background: rgba(216, 150, 20, .14); }
+.cv .cert-status.plan { color: #4c5a68; background: rgba(90, 110, 130, .14); }
+
+/* Download button */
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-family: var(--nav-font);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.btn-cv:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
+}
+
+.btn-cv i { font-size: 18px; }
+
+/* Technology grid */
+.tech .tech-item {
+  height: 100%;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 12px;
+  padding: 22px 10px 18px;
+  text-align: center;
+  transition: .3s;
+}
+
+.tech .tech-item:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .09);
+}
+
+.tech .tech-item img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.tech .tech-item span {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+}
+
+/* Project cards */
+.portfolio .project-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.portfolio .project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .12);
+}
+
+.portfolio .shot-frame {
+  position: relative;
+  background: #eef2f6;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.portfolio .shot-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.portfolio .live-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(16, 141, 72, .95);
+  padding: 5px 11px;
+  border-radius: 30px;
+}
+
+.portfolio .live-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.portfolio .card-body-x { padding: 20px; display: flex; flex-direction: column; flex: 1 1 auto; }
+
+.portfolio .card-body-x .eyebrow {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 8px;
+}
+
+.portfolio .card-body-x h4 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+}
+
+.portfolio .card-body-x p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+}
+
+.portfolio .card-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; }
+
+.portfolio .card-actions .act {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  background: transparent;
+  transition: .25s;
+  cursor: pointer;
+}
+
+.portfolio .card-actions .act:hover { background: var(--accent-color); color: var(--contrast-color); }
+.portfolio .card-actions .act.primary { background: var(--accent-color); color: var(--contrast-color); }
+.portfolio .card-actions .act.primary:hover { background: color-mix(in srgb, var(--accent-color), transparent 20%); }
+
+/* Project modals */
+.project-modal .modal-content { border: 0; border-radius: 14px; overflow: hidden; }
+.project-modal .modal-header { background: var(--accent-color); color: var(--contrast-color); border: 0; padding: 22px 26px; }
+.project-modal .modal-header .modal-title { font-family: var(--heading-font); font-weight: 700; font-size: 24px; }
+.project-modal .modal-header .btn-close { filter: invert(1) grayscale(100%) brightness(200%); opacity: .85; }
+.project-modal .modal-body { padding: 26px; }
+.project-modal .modal-body p { line-height: 1.75; font-size: 15px; }
+.project-modal h6 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 45%);
+  margin: 26px 0 12px;
+}
+
+.project-modal .result-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  font-size: 14.5px;
+}
+
+.project-modal .result-row:last-child { border-bottom: 0; }
+.project-modal .result-row strong { text-align: right; color: var(--heading-color); }
+
+.project-modal .chip {
+  display: inline-block;
+  font-size: 13px;
+  padding: 6px 14px;
+  margin: 0 6px 8px 0;
+  border-radius: 50px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.project-modal .modal-footer { border: 0; padding: 0 26px 26px; gap: 8px; justify-content: flex-start; }
+
+/* Contact cards */
+.contact .contact-card {
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: .3s;
+}
+
+.contact a.contact-card:hover { transform: translateY(-6px); border-color: var(--accent-color); box-shadow: 0 10px 26px rgba(0, 0, 0, .09); }
+.contact .contact-card i { font-size: 30px; color: var(--accent-color); margin-bottom: 14px; display: block; }
+.contact .contact-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: var(--heading-color); }
+.contact .contact-card p { font-size: 14.5px; margin: 0; color: color-mix(in srgb, var(--default-color), transparent 30%); }
+
+/* Small print */
+.note-line { font-size: 13.5px; color: color-mix(in srgb, var(--default-color), transparent 40%); }
+
+.project-modal .modal-shot {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.project-modal .modal-body h6:first-of-type { margin-top: 0; }
