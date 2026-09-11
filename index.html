@@ -961,6 +961,8 @@
       const sentEl = form.querySelector(".sent-message");
       const button = form.querySelector("button[type=submit]");
 
+      form.name_field_value = (field) => (form.elements[field]?.value || "").trim();
+
       const reset = () => {
         loading.classList.remove("d-block");
         errorEl.classList.remove("d-block");
@@ -977,8 +979,25 @@
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
+        // Trim first: `required` treats a field of spaces as filled, so
+        // "   " would otherwise validate and send a blank message.
+        const name = form.name_field_value("name");
+        const email = form.name_field_value("email");
+        const message = form.name_field_value("message");
+
+        const limits = { name: 100, email: 150, message: 2000 };
+
+        if (!name || !email || !message) {
+          fail("Please fill in your name, a valid email address and a message.");
+          return;
+        }
         if (!form.checkValidity()) {
           fail("Please fill in your name, a valid email address and a message.");
+          return;
+        }
+        // maxlength only constrains typing, not a scripted or crafted submit.
+        if (name.length > limits.name || email.length > limits.email || message.length > limits.message) {
+          fail("That message is too long. Please keep it under 2000 characters.");
           return;
         }
 
@@ -987,10 +1006,15 @@
         button.disabled = true;
 
         try {
+          const payload = new FormData(form);
+          payload.set("name", name);
+          payload.set("email", email);
+          payload.set("message", message);
+
           const response = await fetch(form.action, {
             method: "POST",
             headers: { Accept: "application/json" },
-            body: new FormData(form)
+            body: payload
           });
           const data = await response.json().catch(() => ({}));
 
