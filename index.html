@@ -580,6 +580,53 @@
           </div>
 
         </div>
+
+        <div class="row justify-content-center mt-5">
+          <div class="col-lg-9">
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="php-email-form" id="contact-form" novalidate>
+
+              <input type="hidden" name="access_key" value="4c6422d0-71cc-432f-a596-a24f10692a8b">
+              <input type="hidden" name="subject" value="New message from your portfolio site">
+              <input type="hidden" name="from_name" value="Shivam Kumar portfolio">
+              <!-- Honeypot: a real person never fills this in, bots usually do. -->
+              <input type="checkbox" name="botcheck" class="d-none" style="display:none" tabindex="-1" autocomplete="off">
+
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label for="name-field" class="visually-hidden">Your name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" placeholder="Your name" required maxlength="100">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email-field" class="visually-hidden">Your email address</label>
+                  <input type="email" name="email" id="email-field" class="form-control" placeholder="Your email address" required maxlength="150">
+                </div>
+
+                <div class="col-12">
+                  <label for="message-field" class="visually-hidden">Your message</label>
+                  <textarea name="message" id="message-field" class="form-control" rows="6" placeholder="Your message" required maxlength="2000"></textarea>
+                </div>
+
+                <div class="col-12 text-center">
+                  <div class="loading">Sending your message</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Thank you. Your message has been sent and I will reply to the address you gave.</div>
+
+                  <button type="submit">Send message</button>
+                  <p class="note-line mt-3 mb-0">
+                    Your name, email address and message are sent to my inbox through
+                    <a href="https://web3forms.com/privacy" target="_blank" rel="noopener">Web3Forms</a>
+                    and used only to reply to you. They are not stored on this site,
+                    added to any mailing list, or shared with anyone else.
+                  </p>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
       </div>
 
     </section><!-- /Contact Section -->
@@ -901,6 +948,69 @@
   <script src="vendors/swiper/swiper-bundle.min.js"></script>
 
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Contact form: submit to Web3Forms in the background and report the result
+    // inline, so the visitor is never redirected away from the page.
+    (function () {
+      const form = document.getElementById("contact-form");
+      if (!form) return;
+
+      const loading = form.querySelector(".loading");
+      const errorEl = form.querySelector(".error-message");
+      const sentEl = form.querySelector(".sent-message");
+      const button = form.querySelector("button[type=submit]");
+
+      const reset = () => {
+        loading.classList.remove("d-block");
+        errorEl.classList.remove("d-block");
+        sentEl.classList.remove("d-block");
+      };
+
+      const fail = (msg) => {
+        reset();
+        errorEl.textContent = msg;
+        errorEl.classList.add("d-block");
+        button.disabled = false;
+      };
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          fail("Please fill in your name, a valid email address and a message.");
+          return;
+        }
+
+        reset();
+        loading.classList.add("d-block");
+        button.disabled = true;
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: new FormData(form)
+          });
+          const data = await response.json().catch(() => ({}));
+
+          if (response.ok && data.success) {
+            reset();
+            sentEl.classList.add("d-block");
+            form.reset();
+            button.disabled = false;
+          } else {
+            // The API's own wording ("Invalid form_id/access_key format") means
+            // nothing to a visitor, so log it and show something actionable.
+            console.warn("Web3Forms rejected the submission:", data.message || response.status);
+            fail("Sorry, the message could not be sent. Please reach me on LinkedIn instead.");
+          }
+        } catch (err) {
+          fail("Sorry, the message could not be sent. Please check your connection, or reach me on LinkedIn instead.");
+        }
+      });
+    })();
+  </script>
 
 </body>
 
