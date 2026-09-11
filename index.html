@@ -613,11 +613,11 @@
 
           <h6>How it works</h6>
             <p>Source documents &mdash; the EU AI Act (Regulation EU 2024/1689), the NIST Cybersecurity Framework 2.0 and the NIST AI Risk Management Framework 1.0 &mdash; are loaded, cleaned and split into chunks, embedded with a Hugging Face sentence-transformer (all-MiniLM-L6-v2) and stored in a FAISS vector index.</p>
-            <p>At query time the user's question is matched against the index and the retrieved chunks are passed to Llama 3.3 70B via the Groq API, which composes a plain-English answer with references so the reader can verify the underlying text.</p>
+            <p>At query time the user's question is matched against the index and the retrieved chunks are passed to GPT-OSS 120B via the Groq API, which composes a plain-English answer with references so the reader can verify the underlying text.</p>
             <p>Deployed publicly on Streamlit Community Cloud.</p>
 
           <h6>Tech stack</h6>
-          <div><span class="chip">Python</span><span class="chip">LangChain</span><span class="chip">FAISS</span><span class="chip">Hugging Face</span><span class="chip">Groq / Llama 3.3 70B</span><span class="chip">Streamlit</span><span class="chip">PyPDF</span></div>
+          <div><span class="chip">Python</span><span class="chip">LangChain</span><span class="chip">FAISS</span><span class="chip">Hugging Face</span><span class="chip">Groq / GPT-OSS 120B</span><span class="chip">Streamlit</span><span class="chip">PyPDF</span></div>
         </div>
         <div class="modal-footer">
           <a href="https://rag-compliance-chatbot.streamlit.app/" class="act primary" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Open live app</a>
