@@ -687,7 +687,7 @@
               <h6 class="mt-4">Key results</h6>
               <div>
               <div class="result-row"><span>Training data</span><strong>25,000+ matches</strong></div>
-              <div class="result-row"><span>Test accuracy</span><strong>60.02% (time-based split)</strong></div>
+              <div class="result-row"><span>Test accuracy</span><strong>60.24% (time-based split)</strong></div>
               <div class="result-row"><span>Baseline</span><strong>50.58% form-only model</strong></div>
               </div>
             </div>
@@ -696,7 +696,7 @@
           <h6>How it works</h6>
             <p>Match data from 2000 to 2026 is cleaned and engineered into features covering recent form with exponential time-decay weighting, average goals, win rate, FIFA and Elo ratings, head-to-head record, neutral-venue status and World Cup shot, possession and discipline statistics.</p>
             <p>The model is trained with a time-based split &mdash; fitted on matches before 2021 and tested on 2021&ndash;2026 &mdash; so the reported accuracy is an honest out-of-sample figure rather than a leaked one.</p>
-            <p>Accuracy improved from 50.58% on a form-only baseline to 60.02% after adding rankings, head-to-head records, Elo ratings and time-decay weighting.</p>
+            <p>Accuracy improved from 50.58% on a form-only baseline to 60.24% after adding rankings, head-to-head records, Elo ratings and time-decay weighting.</p>
 
           <h6>Tech stack</h6>
           <div><span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">scikit-learn</span><span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip">Streamlit</span><span class="chip">Kaggle API</span></div>
