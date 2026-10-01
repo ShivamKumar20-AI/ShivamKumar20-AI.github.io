@@ -372,3 +372,174 @@
   .writing .article-card { padding: 24px 20px; }
   .writing .article-card h3 { font-size: 20px; }
 }
+
+/*--------------------------------------------------------------
+# Applied AI Engineer repositioning
+--------------------------------------------------------------*/
+
+/* Hero */
+.hero .hero-name {
+  font-family: var(--nav-font);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: .85;
+  margin-bottom: 6px;
+}
+
+.hero .hero-sub {
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--accent-color);
+  margin-bottom: 18px;
+}
+
+.hero .hero-summary {
+  font-size: 16.5px;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto 14px;
+  opacity: .92;
+}
+
+.hero .hero-note {
+  font-size: 14.5px;
+  max-width: 620px;
+  margin: 0 auto;
+  opacity: .72;
+}
+
+.hero .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+.btn-cv-ghost { background: transparent; border: 1px solid currentColor; }
+.btn-cv-ghost:hover { background: var(--accent-color); border-color: var(--accent-color); }
+
+/* Section sub-headings shared by Tech Stack and Projects */
+.group-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.group-note {
+  font-size: 15px;
+  margin-top: -8px;
+  margin-bottom: 22px;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+}
+
+/* What I'm looking for */
+.looking .looking-item {
+  height: 100%;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-top: 3px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 26px 24px;
+  transition: .3s;
+}
+
+.looking .looking-item:hover { transform: translateY(-5px); box-shadow: 0 10px 26px rgba(0, 0, 0, .08); }
+.looking .looking-item i { font-size: 26px; color: var(--accent-color); margin-bottom: 12px; display: block; }
+.looking .looking-item h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--heading-color); }
+.looking .looking-item p { font-size: 14.5px; line-height: 1.65; margin: 0; color: color-mix(in srgb, var(--default-color), transparent 25%); }
+
+/* Tech stack groups */
+.tech .tech-group { margin-bottom: 38px; }
+.tech .tech-group:last-child { margin-bottom: 0; }
+.tech .tech-chips { margin-top: 14px; text-align: center; }
+
+.tech .tech-chip {
+  display: inline-block;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 7px 16px;
+  margin: 0 7px 9px 0;
+  border-radius: 50px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+}
+
+/* Featured project cards */
+.portfolio .featured-card { border: 1px solid color-mix(in srgb, var(--accent-color), transparent 60%); box-shadow: 0 6px 22px rgba(0, 0, 0, .07); }
+.portfolio .featured-card .shot-frame { height: 100%; border-bottom: 0; border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); }
+.portfolio .featured-card .shot-frame img { height: 100%; aspect-ratio: auto; min-height: 320px; }
+.portfolio .featured-card .card-body-x { padding: 24px; }
+.portfolio .featured-card h4 { font-size: 21px; }
+.portfolio .featured-card .summary { font-size: 14.5px; }
+
+.portfolio .featured-badge {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.portfolio .featured-card .tags {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin-bottom: 14px;
+}
+
+.portfolio .featured-card .disclaimer,
+.project-modal .modal-disclaimer {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #9a6100;
+  background: rgba(216, 150, 20, .12);
+  border-radius: 6px;
+  padding: 8px 11px;
+  margin-bottom: 14px;
+}
+
+.project-modal .modal-disclaimer { font-size: 14px; padding: 12px 15px; margin-bottom: 20px; }
+
+/* Additional projects sit visually below the featured four */
+.portfolio .compact-card .card-body-x { padding: 18px; }
+.portfolio .compact-card h4 { font-size: 17px; }
+.portfolio .compact-card .card-body-x p { font-size: 13.5px; }
+.portfolio .compact-card .shot-frame img { aspect-ratio: 4 / 3; }
+.portfolio .compact-card .card-actions .act { font-size: 12.5px; padding: 7px 13px; }
+
+/* Open to work */
+.cta .cta-box {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 14px;
+  padding: 34px 38px;
+  text-align: center;
+}
+
+.cta .cta-box h3 { font-size: 24px; font-weight: 700; margin-bottom: 10px; color: var(--heading-color); }
+.cta .cta-box p { font-size: 15.5px; max-width: 640px; margin: 0 auto 20px; }
+
+@media (max-width: 575px) {
+  .hero .hero-sub { font-size: 18px; }
+  .hero .hero-summary { font-size: 15px; }
+  .portfolio .featured-card .shot-frame { border-right: 0; border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); }
+  .portfolio .featured-card .shot-frame img { aspect-ratio: 16 / 10; min-height: 0; }
+  .cta .cta-box { padding: 26px 20px; }
+}
+
+/* Hero alignment: iPortfolio's hero is left-aligned, MyResume's is centred */
+.hero.dark-background .hero-summary,
+.hero.dark-background .hero-note { margin-left: 0; margin-right: 0; }
+.hero.dark-background .hero-actions { justify-content: flex-start; }
+
+/* Featured thumbnails are portrait tiles in a tall, narrow column: anchor them
+   to the top-left so the project name is never cropped away. */
+.portfolio .featured-card .shot-frame img { object-position: left top; }
+
+/* Compact cards keep the full portrait tile rather than clipping mid-content */
+.portfolio .compact-card .shot-frame img { aspect-ratio: 3 / 4; }
