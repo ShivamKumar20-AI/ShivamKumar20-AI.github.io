@@ -107,7 +107,7 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span>Birmingham, United Kingdom</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Focus:</strong> <span>NLP, LLMs, RAG, classical ML</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Deployment:</strong> <span>FastAPI, Streamlit, Docker, Fly.io</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Deployment:</strong> <span>FastAPI, Streamlit, Docker, Hugging Face</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Live applications:</strong> <span>5, publicly usable</span></li>
                 </ul>
               </div>
@@ -450,12 +450,6 @@
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
               <div class="tech-item">
-                <img src="assets/img/tech/flydotio.svg" alt="Fly.io logo" loading="lazy">
-                <span>Fly.io</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-              <div class="tech-item">
                 <img src="assets/img/tech/sqlite.svg" alt="SQL / SQLite logo" loading="lazy">
                 <span>SQL / SQLite</span>
               </div>
@@ -579,11 +573,11 @@
                     <p class="eyebrow"><span class="featured-badge">Featured</span> Transformer NLP</p>
                     <h4>Radiology Report Summariser</h4>
                     <p class="summary">A transformer-based NLP prototype that turns the free-text findings of a chest X-ray report into a concise impression, using a fine-tuned T5 model.</p>
-                    <p class="tags">NLP &middot; Transformers &middot; T5 &middot; Text Summarisation &middot; Docker &middot; Fly.io</p>
+                    <p class="tags">NLP &middot; Transformers &middot; T5 &middot; Text Summarisation &middot; Streamlit &middot; Docker</p>
                   <p class="disclaimer"><i class="bi bi-exclamation-triangle"></i> Technical demonstration only. Not a medical device and not a clinical decision-support tool.</p>
                     <div class="card-actions">
                       <button type="button" class="act" data-bs-toggle="modal" data-bs-target="#modal-radiology"><i class="bi bi-info-circle"></i> Case study</button>
-                  <a href="https://radiology-summariser.fly.dev/" class="act primary" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Open live app</a>
+                  <a href="https://radiology-summariser.streamlit.app/" class="act primary" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Open live app</a>
 
                     </div>
                   </div>
@@ -592,6 +586,7 @@
             </article>
           </div><!-- End Featured Project -->
         </div>
+        <p class="note-line text-center mt-3 mb-0">Live demos are hosted free on Streamlit Community Cloud and go to sleep when nobody is using them. The first visit wakes the app, which can take a minute or two.</p>
 
         <h3 class="group-title mt-5" data-aos="fade-up">Additional projects</h3>
         <p class="group-note" data-aos="fade-up">Earlier and supporting work across NLP, computer vision, classical machine learning and AI governance.</p>
@@ -736,7 +731,7 @@
             </article>
           </div><!-- End Project Card -->
         </div>
-        <p class="note-line text-center mt-4 mb-0">Live applications are hosted on Streamlit Community Cloud and may take a few seconds to wake from sleep.</p>
+        <p class="note-line text-center mt-4 mb-0">Live demos are hosted free on Streamlit Community Cloud and go to sleep when nobody is using them. The first visit wakes the app, which can take a minute or two.</p>
       </div>
 
     </section><!-- /Projects Section -->
@@ -751,6 +746,23 @@
 
       <div class="container">
         <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <article class="article-card" data-aos="fade-up" data-aos-delay="100">
+              <p class="eyebrow">Threat modelling</p>
+              <h3><a href="https://medium.com/@shivamkumar9076431/i-threat-modelled-my-own-ai-compliance-demos-my-privacy-tool-was-exposing-its-own-records-a5681d57711f" target="_blank" rel="noopener">I Threat Modelled My Own AI Compliance Demos. My Privacy Tool Was Exposing Its Own Records.</a></h3>
+              <p class="standfirst">What I found, what I fixed, and what I broke along the way</p>
+              <p class="meta">
+                <i class="bi bi-calendar3"></i> <time datetime="2026-10-20">20 October 2026</time>
+                <span class="dot">&middot;</span> 8 min read
+                <span class="dot">&middot;</span> Published on Medium
+              </p>
+              <p class="summary">READMEs are easy to write and hard to live up to. I threat modelled three of my own demos &mdash; the GDPR request classifier, the compliance chatbot and the radiology summariser &mdash; by drawing how data moves through each one, marking the points where it crosses a trust boundary and working through STRIDE at every one. The privacy tool came off worst: its history tab and CSV export were open to any visitor, while the README described them as restricted. It also mislabelled a plain deletion request as a subject access request. This piece walks through what I found, the fixes, the one fix that briefly took a demo down, and the lesson that cost me the most time &mdash; a fix is not a fix until it has been retested on the live app rather than on a laptop. Testing was limited to my own applications using invented data, and it is not a penetration test.</p>
+              <div class="topics"><span class="chip">Threat modelling</span><span class="chip">STRIDE</span><span class="chip">AI security</span><span class="chip">Data minimisation</span><span class="chip">Responsible AI</span></div>
+              <div class="card-actions">
+                <a href="https://medium.com/@shivamkumar9076431/i-threat-modelled-my-own-ai-compliance-demos-my-privacy-tool-was-exposing-its-own-records-a5681d57711f" class="act primary" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Read on Medium</a>
+              </div>
+            </article>
+          </div>
           <div class="col-lg-10">
             <article class="article-card" data-aos="fade-up" data-aos-delay="100">
               <p class="eyebrow">AI governance</p>
@@ -925,6 +937,7 @@
         <div class="modal-footer">
           <a href="https://rag-compliance-chatbot.streamlit.app/" class="act primary" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Open live app</a>
           <a href="https://github.com/ShivamKumar20-AI/rag-compliance-chatbot" class="act" target="_blank" rel="noopener"><i class="bi bi-github"></i> View the code</a>
+          <p class="note-line wake-note mb-0"><i class="bi bi-moon"></i> Hosted free on Streamlit Community Cloud. If nobody has used it recently the app will be asleep, and the first visit takes a minute or two to wake it.</p>
         </div>
       </div>
     </div>
@@ -973,6 +986,7 @@
         <div class="modal-footer">
           <a href="https://fifa-world-cup-predictor-2026.streamlit.app/" class="act primary" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Open live app</a>
           <a href="https://github.com/ShivamKumar20-AI/world-cup-predictor" class="act" target="_blank" rel="noopener"><i class="bi bi-github"></i> View the code</a>
+          <p class="note-line wake-note mb-0"><i class="bi bi-moon"></i> Hosted free on Streamlit Community Cloud. If nobody has used it recently the app will be asleep, and the first visit takes a minute or two to wake it.</p>
         </div>
       </div>
     </div>
@@ -1045,7 +1059,7 @@
               <div>
               <div class="result-row"><span>ROUGE-1 F1</span><strong>0.450 on 543 test reports</strong></div>
               <div class="result-row"><span>Model</span><strong>T5-small, fine-tuned</strong></div>
-              <div class="result-row"><span>Deployment</span><strong>Docker on Fly.io, CI/CD</strong></div>
+              <div class="result-row"><span>Deployment</span><strong>Streamlit Community Cloud</strong></div>
               </div>
             </div>
           </div>
@@ -1059,15 +1073,16 @@
             <h6>What it demonstrates</h6>
             <p>Transformer fine-tuning, sequence-to-sequence summarisation, ROUGE evaluation, containerisation and automated deployment.</p>
             <h6>Deployment</h6>
-            <p>FastAPI with a browser interface and a POST /get_summary endpoint, containerised with Docker and deployed to Fly.io in London, with deployment wired to GitHub Actions.</p>
+            <p>A Streamlit application on Streamlit Community Cloud, loading the fine-tuned model from a private Hugging Face repository at start-up. The FastAPI service, the POST /get_summary endpoint and the Dockerfile from the earlier container deployment are kept in the codebase.</p>
             <h6>Limitations and next steps</h6>
             <p>ROUGE-1 F1 is 0.450 across all 543 held-out reports (ROUGE-2 0.343, ROUGE-L 0.446). The model leans towards reporting a normal study and misses consolidation: of 65 test reports whose impression mentions consolidation, pneumonia, airspace disease or an infiltrate, only 15 generated impressions mention any of those. Next steps: balance the training data, measure sensitivity for specific findings alongside ROUGE, and try a larger or clinically pre-trained model.</p>
 
           <h6>Tech stack</h6>
-          <div><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">Hugging Face Transformers</span><span class="chip">T5</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Fly.io</span><span class="chip">GitHub Actions</span></div>
+          <div><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">Hugging Face Transformers</span><span class="chip">T5</span><span class="chip">Streamlit</span><span class="chip">FastAPI</span><span class="chip">Docker</span></div>
         </div>
         <div class="modal-footer">
-          <a href="https://radiology-summariser.fly.dev/" class="act primary" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Open live app</a>
+          <a href="https://radiology-summariser.streamlit.app/" class="act primary" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Open live app</a>
+          <p class="note-line wake-note mb-0"><i class="bi bi-moon"></i> Hosted free on Streamlit Community Cloud. If nobody has used it recently the app will be asleep, and the first visit takes a minute or two to wake it.</p>
         </div>
       </div>
     </div>
@@ -1109,6 +1124,7 @@
         <div class="modal-footer">
           <a href="https://gdpr-classifier.streamlit.app/" class="act primary" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Open live app</a>
           <a href="https://github.com/ShivamKumar20-AI/gdpr-classifier" class="act" target="_blank" rel="noopener"><i class="bi bi-github"></i> View the code</a>
+          <p class="note-line wake-note mb-0"><i class="bi bi-moon"></i> Hosted free on Streamlit Community Cloud. If nobody has used it recently the app will be asleep, and the first visit takes a minute or two to wake it.</p>
         </div>
       </div>
     </div>
@@ -1149,6 +1165,7 @@
         </div>
         <div class="modal-footer">
           <a href="https://visual-clothing-recommendations.streamlit.app/" class="act primary" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Open live app</a>
+          <p class="note-line wake-note mb-0"><i class="bi bi-moon"></i> Hosted free on Streamlit Community Cloud. If nobody has used it recently the app will be asleep, and the first visit takes a minute or two to wake it.</p>
         </div>
       </div>
     </div>

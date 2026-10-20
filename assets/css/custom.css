@@ -543,3 +543,14 @@
 
 /* Compact cards keep the full portrait tile rather than clipping mid-content */
 .portfolio .compact-card .shot-frame img { aspect-ratio: 3 / 4; }
+
+/* Wake-from-sleep note inside a project modal footer */
+.project-modal .modal-footer .wake-note {
+  flex: 0 0 100%;
+  margin-top: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.5;
+}
+.project-modal .modal-footer .wake-note i { margin-top: 2px; flex-shrink: 0; }
