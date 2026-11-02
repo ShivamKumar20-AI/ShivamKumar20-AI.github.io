@@ -576,3 +576,11 @@
   .background .timeline { padding-left: 20px; }
   .background .tl-item::before { left: -27px; }
 }
+
+/* Availability line under the location contact card */
+.contact .contact-card .avail {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 13.5px;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+}
