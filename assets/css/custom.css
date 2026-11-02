@@ -4,60 +4,16 @@
 --------------------------------------------------------------*/
 
 /* Curriculum Vitae section (replaces the template's Resume block) */
-.cv .cv-title {
-  color: var(--heading-color);
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 
-.cv .cv-item {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid var(--accent-color);
-  position: relative;
-}
 
-.cv .cv-item h4 {
-  line-height: 20px;
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin-bottom: 10px;
-}
 
-.cv .cv-item h5 {
-  font-size: 15px;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 10px;
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  border-radius: 4px;
-}
 
-.cv .cv-item ul { padding-left: 20px; }
-.cv .cv-item ul li { padding-bottom: 10px; }
-.cv .cv-item:last-child { padding-bottom: 0; }
 
-.cv .cv-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: var(--background-color);
-  border: 2px solid var(--accent-color);
-}
 
 /* Certification list */
-.cv .cert-list { list-style: none; padding: 0; margin: 0; }
+.background .cert-list { list-style: none; padding: 0; margin: 0; }
 
-.cv .cert-list li {
+.background .cert-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,9 +22,9 @@
   border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.cv .cert-list li:last-child { border-bottom: 0; }
+.background .cert-list li:last-child { border-bottom: 0; }
 
-.cv .cert-status {
+.background .cert-status {
   flex: 0 0 auto;
   font-size: 12.5px;
   font-weight: 600;
@@ -78,9 +34,9 @@
   white-space: nowrap;
 }
 
-.cv .cert-status.ok   { color: #0f7b3f; background: rgba(25, 160, 90, .12); }
-.cv .cert-status.wip  { color: #9a6100; background: rgba(216, 150, 20, .14); }
-.cv .cert-status.plan { color: #4c5a68; background: rgba(90, 110, 130, .14); }
+.background .cert-status.ok   { color: #0f7b3f; background: rgba(25, 160, 90, .12); }
+.background .cert-status.wip  { color: #9a6100; background: rgba(216, 150, 20, .14); }
+.background .cert-status.plan { color: #4c5a68; background: rgba(90, 110, 130, .14); }
 
 /* Download button */
 .btn-cv {
@@ -570,3 +526,53 @@
 /* Contact card that is information rather than a link */
 .contact .contact-card-static { cursor: default; }
 .contact .contact-card-static:hover { transform: none; }
+
+/* Background: dates, roles and places only */
+.background .timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 26px;
+  border-left: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.background .tl-item { position: relative; padding: 0 0 26px 0; }
+.background .tl-item:last-child { padding-bottom: 0; }
+
+.background .tl-item::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--background-color);
+  border: 2px solid var(--accent-color);
+}
+
+.background .tl-dates {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 4px;
+}
+
+.background .tl-item h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 3px;
+}
+
+.background .tl-item p {
+  margin: 0;
+  font-size: 14.5px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+@media (max-width: 575px) {
+  .background .timeline { padding-left: 20px; }
+  .background .tl-item::before { left: -27px; }
+}
