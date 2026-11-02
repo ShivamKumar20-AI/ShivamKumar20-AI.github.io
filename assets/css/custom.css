@@ -566,3 +566,7 @@
 }
 .project-modal .modal-footer .code-note i { margin-top: 2px; flex-shrink: 0; }
 .project-modal .modal-footer .code-note a { color: var(--accent-color); text-decoration: underline; }
+
+/* Contact card that is information rather than a link */
+.contact .contact-card-static { cursor: default; }
+.contact .contact-card-static:hover { transform: none; }
